@@ -6,7 +6,7 @@
   "name":"imguigml_defines",
   "parent":{
     "name":"Scripts",
-    "path":"folders/ImGuiGML/Scripts.yy",
+    "path":"folders/gmGui/ImGuiGML/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

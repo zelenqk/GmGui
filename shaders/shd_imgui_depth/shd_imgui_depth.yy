@@ -4,7 +4,7 @@
   "name":"shd_imgui_depth",
   "parent":{
     "name":"Shaders",
-    "path":"folders/ImGuiGML/Shaders.yy",
+    "path":"folders/gmGui/ImGuiGML/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

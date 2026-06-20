@@ -6,7 +6,7 @@
   "name":"imguigml_wrapper_widget",
   "parent":{
     "name":"extension",
-    "path":"folders/ImGuiGML/Scripts/extension.yy",
+    "path":"folders/gmGui/ImGuiGML/Scripts/extension.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

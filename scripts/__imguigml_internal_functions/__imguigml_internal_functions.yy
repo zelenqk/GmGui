@@ -6,7 +6,7 @@
   "name":"__imguigml_internal_functions",
   "parent":{
     "name":"__internal",
-    "path":"folders/ImGuiGML/Scripts/extension/__internal.yy",
+    "path":"folders/gmGui/ImGuiGML/Scripts/extension/__internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

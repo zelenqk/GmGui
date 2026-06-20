@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ImGuiWrapper",
   "parent":{
-    "name":"gmGui",
-    "path":"folders/gmGui.yy",
+    "name":"Classes",
+    "path":"folders/gmGui/Classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

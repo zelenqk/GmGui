@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ImGuiFunctions",
+  "%Name":"ImGuiWidgets",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ImGuiFunctions",
+  "name":"ImGuiWidgets",
   "parent":{
     "name":"Classes",
     "path":"folders/gmGui/Classes.yy",

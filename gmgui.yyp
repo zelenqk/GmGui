@@ -17,7 +17,6 @@
     {"$GMFolder":"","%Name":"extension","folderPath":"folders/gmGui/ImGuiGML/Scripts/extension.yy","name":"extension","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"__internal","folderPath":"folders/gmGui/ImGuiGML/Scripts/extension/__internal.yy","name":"__internal","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shaders","folderPath":"folders/gmGui/ImGuiGML/Shaders.yy","name":"Shaders","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"ImGuiGML","folderPath":"folders/ImGuiGML.yy","name":"ImGuiGML","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],

@@ -1,4 +1,4 @@
-## WGmGui
+## GmGui
 This project is a fork of [rousr's ImGui extension](https://rousr.itch.io/imguigml) and it wouldn't have been possible without it
 
 ### Introduction

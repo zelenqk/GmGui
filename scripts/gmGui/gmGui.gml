@@ -47,12 +47,12 @@ function gmGui() : ImGuiWidgets() constructor {
 		_extImguiGML_shutdown();
 	}
 	
-	step = function(){
+	update = function(){
 		///@desc imgui - Begin Step
 		///@function __event_begin_step
 		///@desc imguigml begin step event
 		///@extensionizer { "docs": false } 
-			/////////////
+		/////////////
 		#region Update Input
 			var mb     = global.__imgui_mouse_buttons; 
 			var num_mouse_buttons = global.__imgui_num_mouse_buttons;
@@ -214,7 +214,7 @@ function gmGui() : ImGuiWidgets() constructor {
 		#endregion
 	}
 	
-	submit = function(){
+	render = function(){
 		global.___imguiIg = undefined;
 		if (!NewFrame) return;
 		  

@@ -66,7 +66,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 	///@param {Real} [_border_b=0.0]   border color b
 	///@param {Real} [_border_a=0.0]   border color a
 	static image = function() {
-		var texture_id = __texture_id(argument[0], EImGuiGML_TextureType.Texture);
+		var texture_id = __imguigml_texture_id(argument[0], EImGuiGML_TextureType.Texture);
 		__image(texture_id, 
 		                  argument[1],
 		                  argument[2],
@@ -107,14 +107,14 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 			surface = argument[argi++],
 			width = (argument_count > 1)  ? argument[argi++] : undefined,
 			height = (argument_count > 2) ? argument[argi++] : undefined,
-			texture_id = __texture_id(surface, EImGuiGML_TextureType.Surface),
+			texture_id = __imguigml_texture_id(surface, EImGuiGML_TextureType.Surface),
 			_exists = surface_exists(surface);
 		
 		if is_undefined(width)  width =  (_exists) ? surface_get_width(surface)  : 0;
 		if is_undefined(height) height = (_exists) ? surface_get_height(surface) : 0;
 	
 	
-		var texture_id = __texture_id(argument[0], EImGuiGML_TextureType.Surface);
+		var texture_id = __imguigml_texture_id(argument[0], EImGuiGML_TextureType.Surface);
 		__image(texture_id,
 						  //Size 
 		                  width,
@@ -172,7 +172,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 		
 		var cached		= sr_sprite_cache_push_sprite(Sprite_cache, sprite, sub_img);
 		var uvs			= sr_sprite_cache_get_uvs(Sprite_cache, cached);
-		var texture_id	= __texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
+		var texture_id	= __imguigml_texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
 		
 		width	= is_undefined(width)  ? sprite_get_width(sprite)  : width;
 		height	= is_undefined(height) ? sprite_get_height(sprite) : height;
@@ -211,7 +211,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 	///@param {Real} [_tint_a=1.0]         tint color a
 	///@returns {Boolean} _pressed
 	static image_button = function() {
-		var texture_id = __texture_id(argument[0], EImGuiGML_TextureType.Texture);
+		var texture_id = __imguigml_texture_id(argument[0], EImGuiGML_TextureType.Texture);
 		return __image_button(
 			texture_id,
 			// Size
@@ -263,7 +263,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 			surface = argument[argi++],
 			width = (argument_count > 1)  ? argument[argi++] : undefined,
 			height = (argument_count > 2) ? argument[argi++] : undefined,
-			texture_id = __texture_id(surface, EImGuiGML_TextureType.Surface),
+			texture_id = __imguigml_texture_id(surface, EImGuiGML_TextureType.Surface),
 			_exists = surface_exists(surface);
 		
 		if is_undefined(width)  width =  (_exists) ? surface_get_width(surface)  : 0;
@@ -335,7 +335,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 		var ret = false;
 		var cached     = sr_sprite_cache_push_sprite(Sprite_cache, sprite, sub_img);
 		var uvs        = sr_sprite_cache_get_uvs(Sprite_cache, cached);
-		var texture_id = __texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
+		var texture_id = __imguigml_texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
 	
 		width  = is_undefined(width)  ? sprite_get_width(sprite)  : width;
 		height = is_undefined(height) ? sprite_get_height(sprite) : height;
@@ -525,7 +525,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 	
 	///@function __image(_texture_id, _size_x, _size_y, [_u0=0.0], [_v0=0.0], [_u1=1.0], [_v1=1.0], [_tint_r=1.0], [_tint_g=1.0], [_tint_b=1.0], [_tint_a=1.0], [_border_r=0.0], [_border_g=0.0], [_border_b=0.0], [_border_a=0.0])
 	///@desc internal imguigml  call to draw an image using the `_texture_id` texture
-	///@param {Real} _texture_id       texture id is a generated id from __texture_id
+	///@param {Real} _texture_id       texture id is a generated id from __imguigml_texture_id
 	///@param {Real} _size_x           width
 	///@param {Real} _size_y           height
 	///@param {Real} [_u0=0.0]         texture u0

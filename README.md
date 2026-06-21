@@ -1,8 +1,45 @@
-## GmGui
-This project is a fork of [rousr's ImGui extension](https://rousr.itch.io/imguigml) and it wouldn't have been possible without it
+# gmGui
+
+This project is a fork of [rousr's ImGui extension](https://rousr.itch.io/imguigml), and it wouldn't have been possible without it.
 
 ### Introduction
-Dear ImGui is a popular library for immediate-mode GUI and ImGuiGML is a wrapper that exposes ImGui's functions to GameMaker
-To install GmGui simply download a release and import it as a local-package in your project
 
-when in doubt check the [wiki](https://github.com/zelenqk/GmGui/wiki)
+[Dear ImGui](https://github.com/ocornut/imgui) is a popular library for immediate-mode GUI, and the original ImGuiGML is a wrapper that exposes ImGui's functions to GameMaker through a GameMaker object and a large set of global `imguigml_*` functions.
+
+**gmGui** is a modernized rewrite of that wrapper's GML side. Instead of a persistent GameMaker object and hundreds of global functions, the entire API is exposed through a single struct with chainable, namespaced methods:
+
+```gml
+// Create event
+imgui = new gmGui();
+```
+
+```gml
+// Begin Step event
+imgui.update();
+```
+
+```gml
+// Draw GUI event
+if (imgui.ready()) {
+    imgui.start("My Window");
+        imgui.text("Hello, world!");
+    imgui.finish();
+}
+imgui.render();
+```
+
+```gml
+// Clean Up event
+imgui.destroy();
+```
+
+The underlying DLL and rendering pipeline are unchanged this is a GML-side ergonomics rewrite, not a new ImGui backend.
+
+### Installation
+
+1. Download the latest release.
+2. Import it as a local package into your GameMaker project.
+
+### Documentation
+
+When in doubt, check the [wiki](https://github.com/zelenqk/GmGui/wiki) it covers initialization and lifecycle methods, window flags, and a walkthrough for your first window.

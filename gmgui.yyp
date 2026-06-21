@@ -42,6 +42,7 @@
     {"id":{"name":"ImGuiWrapper","path":"scripts/ImGuiWrapper/ImGuiWrapper.yy",},},
     {"id":{"name":"shd_imgui_depth","path":"shaders/shd_imgui_depth/shd_imgui_depth.yy",},},
     {"id":{"name":"shd_imgui","path":"shaders/shd_imgui/shd_imgui.yy",},},
+    {"id":{"name":"pixel_heart_2779422_1280","path":"sprites/pixel_heart_2779422_1280/pixel_heart_2779422_1280.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

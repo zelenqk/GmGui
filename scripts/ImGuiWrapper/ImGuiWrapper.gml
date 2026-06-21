@@ -45,7 +45,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} [_pos_x=0.0]
 	///@param {Real} [_spacing_w=-1.0]
 	static dummy = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument_count > 0 ? argument[0] : 0.0, ERousrData.Float);
 		sr_buffer_write(buff, argument_count > 1 ? argument[1] : -1.0, ERousrData.Float);
 		if (!__imguigml_ext_call(_extImguiGML_same_line()))
@@ -67,7 +67,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc move content position back to the left, by style.IndentSpacing or indent_w if >0
 	///@param {Real} [_index_w=0.0f]
 	static unindent = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument_count > 0 ? argument[0] : 0.0, ERousrData.Float);
 		if (!__imguigml_ext_call(_extImguiGML_unindent()))
 			return;
@@ -121,7 +121,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	static get_cursor_pos_y = function(){
 		if (!__imguigml_ext_call(_extImguiGML_get_cursor_pos_y())) return;
 		
-		var _buff = __wrapper_buffer();
+		var _buff = __imguigml_wrapper_buffer()
 		return buffer_read(_buff, buffer_f32);
 	}
 	__ImguiIg(get_cursor_pos_y)
@@ -131,7 +131,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _x
 	///@param {Real} _y
 	static set_cursor_pos = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		
@@ -153,7 +153,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc set the imgui cursor position y
 	///@param {Real} _y
 	static set_cursor_pos_y = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		
 		if (!__imguigml_ext_call(_extImguiGML_set_cursor_pos_y())) return;
@@ -194,7 +194,8 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _x
 	///@param {Real} _y
 	static set_cursor_screen_pos = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
+		
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		if (!__imguigml_ext_call(_extImguiGML_set_cursor_screen_pos())) return;
@@ -309,7 +310,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc get position of column line (in pixels, from the left side of the contents region).
 	///@param {Real} [_column_index=-1]   pass -1 to use current column, otherwise 0..GetColumnsCount() inclusive. column 0 is typically 0.0f
 	static get_column_offset = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument_count > 0 ? argument[0] : -1, ERousrData.Int32);
 		if (!__imguigml_ext_call(_extImguiGML_get_column_offset()))
 			return;
@@ -508,7 +509,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	static push_font = function(){
 		var _font_index = argument_count > 0 ? argument[0] : undefined;
 		if (_font_index == undefined) _font_index = -1;
-		var _buff = __wrapper_buffer();
+		var _buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(_buff, _font_index);
 	
 		if (!__imguigml_ext_call(_extImguiGML_push_font())) 
@@ -549,7 +550,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	static is_font_valid = function(){
 		var _font_index = argument_count > 0 ? argument[0] : undefined;
 	
-		var _buff = __wrapper_buffer();
+		var _buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(_buff, _font_index);
 	
 		if (!__imguigml_ext_call(_extImguiGML_is_font_valid()))
@@ -582,7 +583,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real|String} _id   string or real id to push
 	///@param {String} [_end_id]   last id to push
 	static push_id = function(){
-		var _buff = __wrapper_buffer();
+		var _buff = __imguigml_wrapper_buffer()
 		var _id = argument[0];
 		if (argument_count > 1) {
 		  sr_buffer_write(_buff, string(_id));
@@ -611,7 +612,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {String} [_end_id]   last id to get
 	///@returns {Real} ImGuiID
 	static get_id = function(){
-		var in = __wrapper_buffer();
+		var in = __imguigml_wrapper_buffer()
 		var _id = argument[0];
 		if (argument_count > 1) {
 		  sr_buffer_write(in, string(_id));
@@ -2234,7 +2235,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _color   u32 color
 	///@returns {Array:float4} _color
 	static color_convert_u32_to_float4 = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Uint32);
 		if (!__imguigml_ext_call(_extImguiGML_color_convert_u32_to_float4()))
 			return;
@@ -2284,7 +2285,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _b
 	///@returns {Array:[h,s,v]}
 	static color_convert_rgb_to_hsv = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		sr_buffer_write(buff, argument[2], ERousrData.Float);
@@ -2307,7 +2308,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _b
 	///@returns {Array:[r,g,b]}
 	static color_convert_hsv_to_rgb = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		sr_buffer_write(buff, argument[2], ERousrData.Float);
@@ -2810,7 +2811,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc per-window font scale. Adjust IO.FontGlobalScale if you want to scale all windows
 	///@param {Real} _scale   font scale for this window
 	static set_window_font_scale = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		__imguigml_ext_call(_extImguiGML_set_window_font_scale());
 	}
@@ -2858,7 +2859,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real}             _max_y      max size y
 	///@param {Real:EImGui_Cond} [_cond=0]   condition for setting (not a bit flag)
 	static set_next_window_size_constraints = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		sr_buffer_write(buff, argument[2], ERousrData.Float);
@@ -2872,7 +2873,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real} _size_x   width
 	///@param {Real} _size_y   height
 	static set_next_window_content_size = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument[1], ERousrData.Float);
 		__imguigml_ext_call(_extImguiGML_set_next_window_content_size());
@@ -2884,7 +2885,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Boolean} _collapsed           true if collapsed
 	///@param {Real:EImGui_Cond} [_cond=0]   condition for setting (not a bit flag)
 	static set_next_window_collapsed = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0] ? 1 : 0, ERousrData.Int8);
 		sr_buffer_write(buff, argument_count > 1 ? argument[1] : 0, ERousrData.Int32);
 		__imguigml_ext_call(_extImguiGML_set_next_window_collapsed());
@@ -2906,7 +2907,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@param {Real}   _pos_y          pos y
 	///@param {Real:EImGui_Cond} [_cond=0]   condition for setting (not a bit flag)
 	static set_window_pos = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff,                      argument[0]);
 		sr_buffer_write(buff,                      argument[1],     ERousrData.Float);
 		sr_buffer_write(buff,                      argument[2],     ERousrData.Float);
@@ -3000,7 +3001,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc set scrolling amount [0..GetScrollMaxX()]
 	///@param {Real} _scroll_x   0..GetScrollMaxX()
 	static set_scroll_x = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		__imguigml_ext_call(_extImguiGML_set_scroll_x());
 	}
@@ -3037,7 +3038,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc adjust scrolling amount to make given position valid. use GetCursorPos() or GetCursorStartPos()+offset to get valid positions.
 	///@param {Real} [_center_y_ratio=0.0]  top, 0.5: center, 1.0: bottom.
 	static set_scroll_from_pos_y = function(){
-		var buff = __wrapper_buffer();
+		var buff = __imguigml_wrapper_buffer()
 		sr_buffer_write(buff, argument[0], ERousrData.Float);
 		sr_buffer_write(buff, argument_count > 1 ? argument[1] : 0.0, ERousrData.Float);
 		__imguigml_ext_call(_extImguiGML_set_scroll_from_pos_y());
@@ -3057,7 +3058,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	///@desc replace tree state storage with our own (if you want to manipulate it yourself, typically clear subsection of it)
 	///@param {*} _tree   todo: implement
 	static set_state_storage = function(){
-		//var buff = __wrapper_buffer();
+		//var buff = __imguigml_wrapper_buffer()
 		//sr_buffer_write(buff, <something>, <something);
 		//if (!__imguigml_ext_call(_extImguiGML_set_state_storage();
 	
@@ -3071,7 +3072,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	static get_state_storage = function(){
 	
 		//if (!__imguigml_ext_call(_extImguiGML_get_state_storage();
-		//var buff = __wrapper_buffer();
+		//var buff = __imguigml_wrapper_buffer()
 	
 		// todo: implement
 	}

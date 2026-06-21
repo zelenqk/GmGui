@@ -1,16 +1,17 @@
 //this is an example where you can make your own widgets/prefabs!
 
 function ExampleGmGuiManager() : gmGui() constructor {
+	cache = {};
 	
-    ///@function window(label, id, widgets, [x], [y], [width], [height], [flags])
-    ///@param {String} label
-    ///@param {String} id
-    ///@param {Function} widgets
-    ///@param {Real} [x]
-    ///@param {Real} [y]
-    ///@param {Real} [width]
-    ///@param {Real} [height]
-    ///@param {Real} [flags=0]
+	///@function window(label, id, widgets, [x], [y], [width], [height], [flags])
+	///@param {String} label
+	///@param {String} id
+	///@param {Function} widgets
+	///@param {Real} [x]
+	///@param {Real} [y]
+	///@param {Real} [width]
+	///@param {Real} [height]
+	///@param {Real} [flags=0]
     static window = function(_label, _id, _widgets, _x = undefined, _y = undefined, _width = undefined, _height = undefined, _flags = 0) {
         var widgets = _widgets ?? empty_function;
 
@@ -24,13 +25,42 @@ function ExampleGmGuiManager() : gmGui() constructor {
         finish();
     }
 	
-    ///@function label(text)
-    ///@param {String} text
+
+	
+	///@function label(text)
+	///@param {String} text
 	static label = function(_text){
 		text(_text)
 	}
+	
+	///@function textbox(text)
+	///@param {String} label
+	///@param {String} id
+	///@param {Real} [maxlength]
+	///@param {String} [text]
+	///@param {Function} [onChange]
+	static textbox = function(_label, _id, maxlength = infinity, _text = "", onChange = empty_function){
+		var flags = 0;
+		
+		if (cache[$ _id] == undefined) cache[$ _id] = _text;
+		var state = cache[$ _id];
+		
+		var ret = input_text(_label + "###" + _id, state, 100, 0, onChange);
+	
+		if (ret[0]) {
+			cache[$ _id] = ret[1];
+			onChange(ret[1]);
+		}
+		
+		return ret;
+	}
+	
+	static popup = function(_id, widgets, flags = 0){
+		begin_popup(_id);
+			widgets();
+		end_popup();
+	}
 }
-
 
 function empty_function(){
 	

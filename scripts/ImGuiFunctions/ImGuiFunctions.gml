@@ -500,7 +500,7 @@ function ImGuiFunctions() constructor {
 			y2 = y1,
 			width = (argument_count > 3) ? argument[argi++] : undefined,
 			height = (argument_count > 4) ? argument[argi++] : undefined,
-			texture_id = __texture_id(surface, EImGuiGML_TextureType.Surface),
+			texture_id = __imguigml_texture_id(surface, EImGuiGML_TextureType.Surface),
 			_exists = surface_exists(surface);
 		
 		if is_undefined(width)  width =  (_exists) ? surface_get_width(surface)  : 0;
@@ -562,7 +562,7 @@ function ImGuiFunctions() constructor {
 			v3 = (argument_count > 15) ? argument[argi++] : 1,
 			u4 = (argument_count > 16) ? argument[argi++] : 0,
 			v4 = (argument_count > 17) ? argument[argi++] : 1,
-			texture_id = __texture_id(surface, EImGuiGML_TextureType.Surface);
+			texture_id = __imguigml_texture_id(surface, EImGuiGML_TextureType.Surface);
 	
 		__drawlist_add_image_quad(texture_id, x1, y1, x2, y2, x3, y3, x4, y4, u1, v1, u2, v2, u3, v3, u4, v4, col);
 	}
@@ -591,7 +591,7 @@ function ImGuiFunctions() constructor {
 	
 		var cached     = sr_sprite_cache_push_sprite(Sprite_cache, sprite, sub_img);
 		var uvs        = sr_sprite_cache_get_uvs(Sprite_cache, cached);
-		var texture_id = __texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
+		var texture_id = __imguigml_texture_id(sr_sprite_cache_get_surface(Sprite_cache, cached), EImGuiGML_TextureType.Surface);
 		
 		width  = is_undefined(width)  ? sprite_get_width(sprite)  : width;
 		height = is_undefined(height) ? sprite_get_height(sprite) : height;
@@ -938,7 +938,7 @@ function ImGuiFunctions() constructor {
 	///@desc Pushes a texture to the drawlist 
 	///@param {Real} _tex_id
 	static drawlist_push_texture_id = function() {
-		var texture_id = __texture_id(argument[0]);
+		var texture_id = __imguigml_texture_id(argument[0]);
 		sr_buffer_write(__Imgui_in, texture_id, ERousrData.Uint32);
 		__imguigml_ext_call(_extImguiGML_drawlist_push_texture_id());
 	}
@@ -1053,7 +1053,7 @@ function ImGuiFunctions() constructor {
 	
 	///@function __drawlist_add_image(_texture_id, _x1, _y1, _x2, _y2, [_u1=0], [_v1=0], [_u2=1], [_v2=1], [_col=c_white])
 	///@desc Adds an image to the draw list 
-	///@param {Real} _texture_id   texture id is a generated id from __texture_id
+	///@param {Real} _texture_id   texture id is a generated id from __imguigml_texture_id
 	///@param {Real} _x1 
 	///@param {Real} _y1 
 	///@param {Real} _x2  

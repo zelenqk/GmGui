@@ -1,7 +1,7 @@
 # gmGui
 
 This project is a fork of [rousr's ImGui extension](https://rousr.itch.io/imguigml), and it wouldn't have been possible without it.
-
+![image](image.png)
 ### Introduction
 
 [Dear ImGui](https://github.com/ocornut/imgui) is a popular library for immediate-mode GUI, and the original ImGuiGML is a wrapper that exposes ImGui's functions to GameMaker through a GameMaker object and a large set of global `imguigml_*` functions.

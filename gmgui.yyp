@@ -32,6 +32,7 @@
     {"id":{"name":"rmExample","path":"rooms/rmExample/rmExample.yy",},},
     {"id":{"name":"__imguigml_internal_functions","path":"scripts/__imguigml_internal_functions/__imguigml_internal_functions.yy",},},
     {"id":{"name":"__rousr_functions","path":"scripts/__rousr_functions/__rousr_functions.yy",},},
+    {"id":{"name":"ExampleGmGuiManager","path":"scripts/ExampleGmGuiManager/ExampleGmGuiManager.yy",},},
     {"id":{"name":"gmGui","path":"scripts/gmGui/gmGui.yy",},},
     {"id":{"name":"ImGuiFunctions","path":"scripts/ImGuiFunctions/ImGuiFunctions.yy",},},
     {"id":{"name":"imguigml_config","path":"scripts/imguigml_config/imguigml_config.yy",},},

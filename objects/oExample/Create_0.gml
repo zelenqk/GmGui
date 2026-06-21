@@ -1,1 +1,1 @@
-imgui = new gmGui();
+imgui = new ExampleGmGuiManager();

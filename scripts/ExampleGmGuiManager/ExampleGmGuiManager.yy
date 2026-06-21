@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ExampleGmGuiManager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ExampleGmGuiManager",
+  "parent":{
+    "name":"gmgui",
+    "path":"gmgui.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

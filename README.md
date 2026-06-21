@@ -6,7 +6,7 @@ This project is a fork of [rousr's ImGui extension](https://rousr.itch.io/imguig
 
 [Dear ImGui](https://github.com/ocornut/imgui) is a popular library for immediate-mode GUI, and the original ImGuiGML is a wrapper that exposes ImGui's functions to GameMaker through a GameMaker object and a large set of global `imguigml_*` functions.
 
-> For a more modern version of Dear ImGui you could checkout this project https://github.com/nommiin/ImGui_GM which uses ImGui v1.92.8 (as of the time of writing this) while GmGui is still on ImGui 1.100.4
+> For a more modern version of Dear ImGui you could checkout this project https://github.com/nommiin/ImGui_GM which uses ImGui v1.92.8 (as of the time of writing this) while GmGui is still on ImGui 1.83
 
 **gmGui** is a modernized rewrite of that wrapper's GML side. Instead of a persistent GameMaker object and hundreds of global functions, the entire API is exposed through a single struct with chainable, namespaced methods:
 

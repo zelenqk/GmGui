@@ -2595,7 +2595,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	#endregion
 	#region window functions
 	
-	///@function begin(_name, [_open=undefined], [_flags=0])
+	///@function start(_name, [_open=undefined], [_flags=0])
 	///@desc Push a new ImGui window to add widgets to.
 	///@param {String} _name                         title for window
 	///@param {Real} [_open=undefined]               pass true/false for if this window is open w/close button, undefined for no button
@@ -2624,7 +2624,7 @@ function ImGuiWrapper() : ImGuiFunctions() constructor {
 	}
 	__ImguiIg(start)
 	
-	///@function end()
+	///@function finish()
 	///@desc ImGui::End()
 	static finish = function(){
 		__imguigml_ext_call(_extImguiGML_end());

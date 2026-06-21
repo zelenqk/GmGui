@@ -1269,8 +1269,8 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 		var user_data = argument_count > 5 ? argument[5] : undefined;
 	
 		var call_id = _extImguiGML_input_text();
-		__handle_timguigml_ext_callback(call_id, callback, user_data);
-	
+		__imguigml_handle_text_callback(call_id, callback, user_data);
+
 		var out = __Imgui_out;
 		var ret = array_create(2);
 		ret[@ 0] = buffer_read(out, buffer_s8) != 0;
@@ -1302,7 +1302,7 @@ function ImGuiWidgets() : ImGuiWrapper() constructor{
 		var user_data = argument_count > 7 ? argument[7] : undefined;
 	
 		var call_id = _extImguiGML_input_text_multiline();
-		__handle_timguigml_ext_callback(call_id, callback, user_data);
+		__imguigml_handle_text_callback(call_id, callback, user_data);
 	
 		var out = __Imgui_out;
 		var ret = array_create(2);
